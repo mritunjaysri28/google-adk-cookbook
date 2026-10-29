@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "google-adk-curriculum"
+version = "1.0.0"
+description = "Progressive curriculum and practical reference for Google Agent Development Kit (ADK) and Gemini Multi-Agent Systems"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "Google ADK Curriculum Developer" }
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "google-adk==1.8.0",
+    "google-cloud-aiplatform[adk,agent_engines]==1.122.0",
+    "a2a-sdk==0.2.16",
+    "mcp>=1.11.0,<2.0.0",
+    "crewai==0.95.0",
+    "crewai-tools==0.33.0",
+    "langchain-community==0.3.28",
+    "wikipedia==1.4.0",
+    "scikit-learn==1.7.2",
+    "dateparser==1.2.2",
+    "pandas==2.2.3",
+    "python-docx==1.2.0",
+    "chainlit==2.7.1.1",
+    "python-dotenv>=1.0.0",
+    "beautifulsoup4>=4.12.3",
+    "bs4==0.0.2",
+    "lxml==5.3.0",
+    "fire==0.7.0",
+    "litellm==1.76.0",
+    "cloudpickle==3.1.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.8.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
+
